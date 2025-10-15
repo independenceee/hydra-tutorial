@@ -1,4 +1,8 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { routers } from "@/constants/routers.constant";
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import Image from "next/image";
+import Link from "next/link";
+import { images } from "public/images";
 
 /**
  * Shared layout configurations
@@ -8,23 +12,25 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  * Docs Layout: app/docs/layout.tsx
  */
 export function baseOptions(): BaseLayoutProps {
-  return {
-    nav: {
-      title: (
-        <>
-          <svg
-            width="24"
-            height="24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-label="Logo"
-          >
-            <circle cx={12} cy={12} r={12} fill="currentColor" />
-          </svg>
-          My App
-        </>
-      ),
-    },
-    // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [],
-  };
+    return {
+        nav: {
+            title: (
+                <div className="flex flex-col items-start gap-3">
+                    <Link href={routers.home} className="flex items-center gap-3">
+                        <Image
+                            className="h-12 w-auto animate-pulse"
+                            loading="lazy"
+                            src={images.logo}
+                            alt="Cardano2vn"
+                        />
+                        <h3 className="text-2xl font-bold text-gray-950 dark:text-gray-300 font-stretch-50%">
+                            Hydra Tutorial
+                        </h3>
+                    </Link>
+                </div>
+            ),
+        },
+        // see https://fumadocs.dev/docs/ui/navigation/links
+        links: [],
+    };
 }
