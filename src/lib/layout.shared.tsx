@@ -1,8 +1,8 @@
 import { routers } from "@/constants/routers.constant";
+import { images } from "@/public/images*";
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import Image from "next/image";
 import Link from "next/link";
-import { images } from "public/images";
 
 /**
  * Shared layout configurations
