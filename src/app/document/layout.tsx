@@ -3,6 +3,9 @@ import { RootProvider } from "fumadocs-ui/provider";
 import { baseOptions } from "@/lib/layout.shared";
 import { source } from "@/lib/source";
 
+import "fumadocs-ui/css/ocean.css";
+import "fumadocs-ui/css/preset.css";
+
 export default function Layout({ children }: LayoutProps<"/document">) {
     return (
         <RootProvider>
